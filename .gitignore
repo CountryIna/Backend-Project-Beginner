@@ -1,0 +1,12 @@
+# Python
+__pychace__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Env files
+.env
