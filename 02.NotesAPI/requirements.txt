@@ -1,0 +1,6 @@
+fastapi #Framework for building REST API
+uvicorn #Serves the FastAPI application
+sqlalchemy #ORM(Object Relation Mapping) for database interaction
+pydantic #Request and response validation
+pytest #Testing
+httpx #HTTP Client used for TestClient
