@@ -1,13 +1,13 @@
 # To-Do List API
 
-Simple REST API untuk mengelola daftar tugas (to-do list), dibuat menggunakan **FastAPI**. Data disimpan sementara di memory (list Python) — belum menggunakan database, jadi data akan hilang setiap kali server di-restart.
+A simple REST API for managing a to-do list, built with **FastAPI**. Data is stored temporarily in memory (a Python list), so there is no database yet and all data is lost whenever the server restarts.
 
-## Fitur
+## Features
 
-- Menambah task baru
-- Melihat semua task
-- Mengubah task (title & status)
-- Menghapus task
+- Add a new task
+- View all tasks
+- Update a task (title & status)
+- Delete a task
 
 ## Tech Stack
 
@@ -15,52 +15,52 @@ Simple REST API untuk mengelola daftar tugas (to-do list), dibuat menggunakan **
 - FastAPI
 - Uvicorn (ASGI server)
 
-## Cara Menjalankan
+## Getting Started
 
-1. Install dependency:
-   ```bash
+1. Install dependencies:
+```bash
    pip install -r requirements.txt
-   ```
+```
 
-2. Jalankan server:
-   ```bash
+2. Run the server:
+```bash
    uvicorn main:app --reload
-   ```
+```
 
-3. Buka dokumentasi API otomatis (Swagger UI) di browser:
-   ```
+3. Open the automatic API documentation (Swagger UI) in your browser:
+```
    http://127.0.0.1:8000/docs
-   ```
+```
 
-## Endpoint
+## Endpoints
 
-| Method | Endpoint       | Deskripsi                    |
-|--------|----------------|-------------------------------|
-| GET    | `/tasks`       | Mengambil semua task          |
-| POST   | `/tasks`       | Menambah task baru            |
-| PUT    | `/tasks/{id}`  | Mengubah task berdasarkan ID  |
-| DELETE | `/tasks/{id}`  | Menghapus task berdasarkan ID |
+| Method | Endpoint       | Description                |
+|--------|----------------|----------------------------|
+| GET    | `/tasks`       | Get all tasks              |
+| POST   | `/tasks`       | Add a new task             |
+| PUT    | `/tasks/{id}`  | Update a task by ID        |
+| DELETE | `/tasks/{id}`  | Delete a task by ID        |
 
-### Contoh Request — Tambah Task
+### Example Request — Add a Task
 
 ```json
 POST /tasks
 {
-  "title": "Belajar FastAPI"
+  "title": "Learn FastAPI"
 }
 ```
 
-### Contoh Response
+### Example Response
 
 ```json
 {
   "id": 1,
-  "title": "Belajar FastAPI",
+  "title": "Learn FastAPI",
   "completed": false
 }
 ```
 
-## Struktur Project
+## Project Structure
 
 ```
 01-todo-api-fastapi/
@@ -69,17 +69,17 @@ POST /tasks
 └── requirements.txt
 ```
 
-## Catatan
+## Notes
 
-Data disimpan di dalam memori (list Python), sehingga akan hilang ketika server di-restart. Project ini dibuat sebagai latihan sebelum mempelajari SQLite, SQLAlchemy, dan database persistence.
+Data is stored in memory (a Python list), so it is lost when the server restarts. This project was built as practice before learning SQLite, SQLAlchemy, and database persistence.
 
-Pembelajaran yang didapat:
+What I learned:
 
-- Merancang endpoint CRUD
-- Menggunakan Pydantic untuk validasi data
-- Mencari data berdasarkan ID
-- Menggunakan helper function untuk mengurangi duplikasi kode
-- Memahami perbedaan ID dan index pada list
-- Memahami konsep object reference pada list dan dictionary Python
+- Designing CRUD endpoints
+- Using Pydantic for data validation
+- Finding data by ID
+- Using helper functions to reduce code duplication
+- Understanding the difference between an ID and a list index
+- Understanding the concept of object references in Python lists and dictionaries
 
-Project ini merupakan bagian dari roadmap belajar backend Python dan FastAPI.
+This project is part of my Python and FastAPI backend learning roadmap.
